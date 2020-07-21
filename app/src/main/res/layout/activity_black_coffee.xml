@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlackCoffeeActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/blackbackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <ImageButton
+                android:id="@+id/aeropress"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/aeropressicon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aeropress"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"></TextView>
+
+            <Space
+                android:layout_width="120dp"
+                android:layout_height="30dp"></Space>
+
+            <ImageButton
+                android:id="@+id/cupping"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/cuppingicon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cupping"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="0dp">
+
+            <ImageButton
+                android:id="@+id/hariov60"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/hariov60icon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hario V60"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <Space
+                android:layout_width="120dp"
+                android:layout_height="20dp"></Space>
+
+            <ImageButton
+                android:id="@+id/frenchpress"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/frenchpressicon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hario V60"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <Space
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                ></Space>
+
+            <ImageButton
+                android:id="@+id/kalita"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/kalitaiocn"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kalita"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:paddingTop="70dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <ImageButton
+                android:id="@+id/chemex"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/chemexicon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chemex"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <Space
+                android:layout_width="120dp"
+                android:layout_height="30dp"></Space>
+
+            <ImageButton
+                android:id="@+id/mokapot"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/mokapoticon"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moka pot"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                ></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
