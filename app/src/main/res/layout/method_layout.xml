@@ -6,10 +6,16 @@
     android:orientation="horizontal">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/roundedrectangle">
+    </ImageView>
+
+    <ImageView
         android:id="@+id/MethodImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp">
     </ImageView>
@@ -21,13 +27,111 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         android:layout_toEndOf="@+id/MethodImageView"
         android:textColor="#000000"
         android:text="Name"
-        android:textSize="30dp"
+        android:textSize="18dp"
+        android:textStyle="bold">
+    </TextView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:id="@+id/CoffeeAmountFrame"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/coffeeamountframe">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/CoffeeAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/CoffeeAmountFrame"
+        android:layout_alignTop="@+id/CoffeeAmountFrame"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:text="17g"
+        android:textColor="#000000"
+        android:textSize="15dp"
         android:textStyle="bold">
 
     </TextView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:id="@+id/WaterAmountFrame"
+        android:layout_toEndOf="@+id/CoffeeAmountFrame"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/wateramountframe">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/WaterAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/CoffeeAmountText"
+        android:layout_alignTop="@+id/CoffeeAmountText"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/CoffeeAmountText"
+        android:text="250g"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:id="@+id/TimeFrame"
+        android:layout_toEndOf="@+id/WaterAmountFrame"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/timeframe">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/TimeAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/WaterAmountText"
+        android:layout_alignTop="@+id/WaterAmountText"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@+id/WaterAmountText"
+        android:text="2:30"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold">
+    </TextView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:id="@+id/TemperatureFrame"
+        android:layout_toEndOf="@+id/TimeFrame"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/temperatureframe">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/TemperatureAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/TimeAmountText"
+        android:layout_alignTop="@+id/TimeAmountText"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/TimeAmountText"
+        android:text="98C"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"></TextView>
 
 </RelativeLayout>

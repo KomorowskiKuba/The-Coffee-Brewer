@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ListOfMethodsActivity">
+    tools:context=".ListOfMethodsActivity"
+    android:background="#000000">
 
     <ListView
         android:divider="@null"
         android:dividerHeight="0dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ListView">

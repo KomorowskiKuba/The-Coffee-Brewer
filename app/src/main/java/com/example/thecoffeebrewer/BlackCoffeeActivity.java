@@ -28,14 +28,14 @@ public class BlackCoffeeActivity extends AppCompatActivity {
         ImageButton kalitaButton = findViewById(R.id.kalita);
         ImageButton mokapotButton = findViewById(R.id.mokapot);
 
-        utils.setGoToListener(aeropressButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class);
+        //utils.setGoToListener(aeropressButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class);
 
-        /*utils.setTransferNameListener(aeropressButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Aeropress");
+        utils.setTransferNameListener(aeropressButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Aeropress");
         utils.setTransferNameListener(hariov60Button, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Hario V60");
         utils.setTransferNameListener(frenchpressButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "French press");
         utils.setTransferNameListener(chemexButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Chemex");
         utils.setTransferNameListener(cuppingButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Cupping");
         utils.setTransferNameListener(kalitaButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Kalita");
-        utils.setTransferNameListener(mokapotButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Moka pot");*/
+        utils.setTransferNameListener(mokapotButton, BlackCoffeeActivity.this, ListOfMethodsActivity.class, "Moka pot");
     }
 }

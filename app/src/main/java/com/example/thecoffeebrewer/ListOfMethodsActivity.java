@@ -31,7 +31,7 @@ public class ListOfMethodsActivity extends AppCompatActivity {
 
     ListView mListView;
     int imgSource = R.drawable.aeropressicon;
-    String [] names = {"Przepis 1", "Przepis 2", "Przepis 3", "Przepis 4", "Przepis 5", "Przepis 6", "Przepis 7", "Przepis 8"};
+    String [] names = {"Slovak AeroPress Championship 2016 - 1st", "Przepis 2", "Przepis 3", "Przepis 4", "Przepis 5", "Przepis 6", "Przepis 7", "Przepis 8"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
