@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackbackground"
+    android:orientation="vertical"
+    tools:context=".MethodActivity">
+
+    <ImageView
+        android:id="@+id/rectanglebackground"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@drawable/halfrectangle"></ImageView>
+
+    <ImageView
+        android:id="@+id/MethodImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"></ImageView>
+
+    <TextView
+        android:id="@+id/MethodTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:id="@+id/CoffeeAmountFrame"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:background="@drawable/coffeeamountframe"></ImageView>
+
+    <TextView
+        android:id="@+id/CoffeeAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CoffeeAmountFrame"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:layout_toLeftOf="@id/CoffeeAmountFrame"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:text="17g"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/WaterAmountFrame"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/CoffeeAmountFrame"
+        android:background="@drawable/wateramountframe"></ImageView>
+
+    <TextView
+        android:id="@+id/WaterAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CoffeeAmountText"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="1dp"
+        android:layout_toLeftOf="@id/CoffeeAmountText"
+        android:layout_toEndOf="@+id/CoffeeAmountText"
+        android:text="250g"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:id="@+id/TimeFrame"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/WaterAmountFrame"
+        android:background="@drawable/timeframe"></ImageView>
+
+    <TextView
+        android:id="@+id/TimeAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/WaterAmountText"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toLeftOf="@id/WaterAmountText"
+        android:layout_toEndOf="@+id/WaterAmountText"
+        android:text="2:30"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:id="@+id/TemperatureFrame"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/TimeFrame"
+        android:background="@drawable/temperatureframe"></ImageView>
+
+    <TextView
+        android:id="@+id/TemperatureAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/TimeAmountText"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="0dp"
+        android:layout_toLeftOf="@id/TimeAmountText"
+        android:layout_toEndOf="@+id/TimeAmountText"
+        android:text="98C"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:background="@drawable/link"></ImageView>
+
+    <TextView
+        android:id="@+id/RatioText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/TemperatureAmountText"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/MethodImageView"
+        android:text="1:12"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"></TextView>
+
+    <ImageView
+        android:id="@+id/GrindSizeFrame"
+        android:layout_width="90dp"
+        android:layout_height="27dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="90dp"
+        android:layout_toEndOf="@+id/RatioText"
+        android:background="@drawable/grindsizeframe"></ImageView>
+
+    <TextView
+        android:id="@+id/GrindSizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginRight="-168dp"
+        android:layout_toStartOf="@+id/GrindSizeFrame"
+        android:text="medium-fine"
+        android:textColor="#000000"
+        android:textSize="10dp"
+        android:textStyle="bold"></TextView>
+
+</RelativeLayout>

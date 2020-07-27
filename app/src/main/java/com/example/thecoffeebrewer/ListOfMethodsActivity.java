@@ -1,31 +1,14 @@
 package com.example.thecoffeebrewer;
 
-import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.DrawableRes;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ListOfMethodsActivity extends AppCompatActivity {
 
@@ -38,7 +21,7 @@ public class ListOfMethodsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_methods);
 
-        mListView = (ListView) findViewById(R.id.ListView);
+        mListView = findViewById(R.id.ListView);
 
         CustomAdapter customAdapter = new CustomAdapter();
         mListView.setAdapter(customAdapter);
@@ -65,9 +48,11 @@ public class ListOfMethodsActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             View view = getLayoutInflater().inflate(R.layout.method_layout, null);
+            Utils utils = new Utils();
 
-            ImageView mImageView = (ImageView) view.findViewById(R.id.MethodImageView);
-            TextView mTextView = (TextView) view.findViewById(R.id.MethodTextView);
+            ImageView background = view.findViewById(R.id.rectanglebackground);
+            ImageView mImageView = view.findViewById(R.id.MethodImageView);
+            TextView mTextView = view.findViewById(R.id.MethodTextView);
 
             try {
                 mImageView.setImageResource(imgSource);
@@ -78,6 +63,10 @@ public class ListOfMethodsActivity extends AppCompatActivity {
                 mTextView.setText(names[position]);
             } catch (NullPointerException ne) {
                 System.out.println("BLAD USTAWIANIA TEKSTU");
+            }
+            try {
+                utils.setGoToListener(background, ListOfMethodsActivity.this, MethodActivity.class);
+            } catch (Exception e) {
             }
 
             return view;
