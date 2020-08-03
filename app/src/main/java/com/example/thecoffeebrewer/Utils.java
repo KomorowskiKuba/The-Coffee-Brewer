@@ -8,7 +8,6 @@ import android.widget.ImageView;
 public class Utils {
 
     Utils() {
-
     }
 
     public void setGoToListener(ImageButton imageButton, Context actualContext, Class c) {

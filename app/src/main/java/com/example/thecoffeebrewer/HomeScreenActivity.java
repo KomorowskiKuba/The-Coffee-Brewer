@@ -1,9 +1,9 @@
 package com.example.thecoffeebrewer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -11,6 +11,10 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Test bazy danych
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        databaseHelper.insertData("Aeropess", "Przepis 1", "250g", "2:30", "15g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
 
         Utils utils = new Utils();
 

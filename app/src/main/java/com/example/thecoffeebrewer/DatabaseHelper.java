@@ -2,6 +2,7 @@ package com.example.thecoffeebrewer;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -41,11 +42,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String id, String method, String name, String amountofwater, String amountoftime, String amountofcoffee, String temperature, String grindsize, String tableofgraphics, String tableofinstructions, String tableoftime, String isfavourite) {
+    public boolean insertData(String method, String name, String amountofwater, String amountoftime, String amountofcoffee, String temperature, String grindsize, String tableofgraphics, String tableofinstructions, String tableoftime, String isfavourite) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(ID, id);
         contentValues.put(METHOD, method);
         contentValues.put(NAME, name);
         contentValues.put(AMOUNT_OF_WATER, amountofwater);
@@ -61,5 +61,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         return result >= 0;
+    }
+
+    public Cursor getMethodByData(String method) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + METHOD + " = " + method, null);
+        return cursor;
     }
 }
