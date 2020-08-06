@@ -22,7 +22,7 @@
         android:layout_marginBottom="5dp"></ImageView>
 
     <TextView
-        android:id="@+id/MethodTextView"
+        android:id="@+id/RecipeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -120,13 +120,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/TimeAmountText"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="1dp"
         android:layout_toLeftOf="@id/TimeAmountText"
         android:layout_toEndOf="@+id/TimeAmountText"
-        android:text="98C"
+        android:text="100C"
         android:textColor="#000000"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:textStyle="bold"></TextView>
 
     <ImageView

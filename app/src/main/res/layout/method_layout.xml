@@ -22,7 +22,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/MethodTextView"
+        android:id="@+id/MethodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -122,7 +122,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/TemperatureAmountText"
+        android:id="@+id/TemperatureText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/TimeAmountText"

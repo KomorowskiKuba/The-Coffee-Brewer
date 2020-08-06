@@ -1,34 +1,124 @@
 package com.example.thecoffeebrewer;
 
+import android.database.Cursor;
 import android.os.Bundle;
-
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LogsActivity extends AppCompatActivity {
+
+    private List<Recipe> listOfRecipes = new ArrayList<Recipe>();
+    private ListView logsListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logs);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle(getTitle());
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        Cursor c = databaseHelper.getLogs();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        if (c.getCount() == 0) {
+            System.out.println("Cursor's error!");
+        } else {
+
+            while (c.moveToNext()) {
+                Recipe r = new Recipe(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6),
+                        c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getString(11));
+
+                listOfRecipes.add(r);
             }
-        });
+        }
+
+        logsListView = findViewById(R.id.LogsListView);
+        LogsActivity.CustomAdapter customAdapter = new LogsActivity.CustomAdapter();
+        logsListView.setAdapter(customAdapter);
+    }
+
+    class CustomAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return listOfRecipes.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View view = getLayoutInflater().inflate(R.layout.method_layout, null);
+            Utils utils = new Utils();
+            Global global = new Global();
+            Integer imageID = global.getMethodId((listOfRecipes.get(position).getMethod()));
+
+            ImageView background = view.findViewById(R.id.rectanglebackground);
+            ImageView mImageView = view.findViewById(R.id.MethodImageView);
+            TextView methodTextName = view.findViewById(R.id.MethodName);
+            TextView methodTextCoffeeAmount = view.findViewById(R.id.CoffeeAmountText);
+            TextView methodTextWaterAmount = view.findViewById(R.id.WaterAmountText);
+            TextView methodTextTimeAmount = view.findViewById(R.id.TimeAmountText);
+            TextView methodTextTemperature = view.findViewById(R.id.TemperatureText);
+
+            try {
+                utils.setTransferRecipeListener(background, LogsActivity.this, MethodActivity.class, listOfRecipes.get(position));
+            } catch (Exception e1) {
+                System.out.println("Background image loading error!");
+            }
+
+            try {
+                mImageView.setImageResource(imageID);
+            } catch (Exception e2) {
+                System.out.println("Method's image loading error!");
+            }
+
+            try {
+                methodTextName.setText((listOfRecipes.get(position)).getName());
+            } catch (NullPointerException e3) {
+                System.out.println("Method's name loading error!");
+            }
+
+            try {
+                methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
+            } catch (NullPointerException e4) {
+                System.out.println("Method's amount of coffee loading error!");
+            }
+
+            try {
+                methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
+            } catch (NullPointerException e5) {
+                System.out.println("Method's amount of water loading error!");
+            }
+
+            try {
+                methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
+            } catch (NullPointerException e6) {
+                System.out.println("Method's amount of time loading error!");
+            }
+
+            try {
+                methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
+            } catch (NullPointerException e6) {
+                System.out.println("Method's temperature loading error!");
+            }
+
+            return view;
+        }
     }
 }

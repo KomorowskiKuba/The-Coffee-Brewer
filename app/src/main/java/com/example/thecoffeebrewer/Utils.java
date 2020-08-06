@@ -44,4 +44,27 @@ public class Utils {
         });
     }
 
+    public void setTransferRecipeListener(ImageView ImageView, Context actualContext, Class c, Recipe r) {
+        ImageView.setOnClickListener(e -> {
+            try {
+                Intent intent = new Intent(actualContext, c);
+                intent.putExtra("Recipe", r);
+                actualContext.startActivity(intent);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+    }
+
+    public int extractGrams(String s) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Character c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                stringBuilder.append(c);
+            }
+        }
+
+        return Integer.parseInt(String.valueOf(stringBuilder));
+    }
+
 }
