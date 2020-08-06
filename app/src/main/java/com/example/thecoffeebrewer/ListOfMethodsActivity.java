@@ -19,16 +19,20 @@ public class ListOfMethodsActivity extends AppCompatActivity {
     private Integer methodId;
     private ListView mListView;
     private List<Recipe> listOfRecipes = new ArrayList<Recipe>();
+    private String methodName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_methods);
 
-        String methodName = getIntent().getStringExtra("methodName");
+        methodName = getIntent().getStringExtra("methodName");
         Global global = new Global();
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         Cursor c = databaseHelper.getMethodByData(methodName);
+
+        Recipe topOfList = new Recipe(methodName, methodName); //dodawanie jako pierwszej karty z gory, karty z nazwa metody
+        listOfRecipes.add(topOfList);
 
         if (c.getCount() == 0) {
             System.out.println("Cursor's error!");
@@ -68,19 +72,39 @@ public class ListOfMethodsActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            View view = getLayoutInflater().inflate(R.layout.method_layout, null);
             Utils utils = new Utils();
+            View methodView;
 
-            ImageView background = view.findViewById(R.id.rectanglebackground);
-            ImageView mImageView = view.findViewById(R.id.MethodImageView);
-            TextView methodTextName = view.findViewById(R.id.MethodName);
-            TextView methodTextCoffeeAmount = view.findViewById(R.id.CoffeeAmountText);
-            TextView methodTextWaterAmount = view.findViewById(R.id.WaterAmountText);
-            TextView methodTextTimeAmount = view.findViewById(R.id.TimeAmountText);
-            TextView methodTextTemperature = view.findViewById(R.id.TemperatureText);
+            if (position == 0) {
+                methodView = getLayoutInflater().inflate(R.layout.top_list_layout, null);
 
-            try {
-                utils.setTransferRecipeListener(background, ListOfMethodsActivity.this, MethodActivity.class, listOfRecipes.get(position));
+                ImageView tImageView = methodView.findViewById(R.id.toplistImageView);
+                TextView tTextView = methodView.findViewById(R.id.toplistTextView);
+
+                try {
+                    tImageView.setImageResource(methodId);
+                } catch (Exception e1) {
+                    System.out.println("Top card's image view loading error!");
+                }
+
+                try {
+                    tTextView.setText(methodName);
+                } catch (Exception e2) {
+                    System.out.println("Top card's text view loading error!");
+                }
+            } else {
+                methodView = getLayoutInflater().inflate(R.layout.method_layout, null);
+
+                ImageView background = methodView.findViewById(R.id.rectanglebackground);
+                ImageView mImageView = methodView.findViewById(R.id.MethodImageView);
+                TextView methodTextName = methodView.findViewById(R.id.MethodName);
+                TextView methodTextCoffeeAmount = methodView.findViewById(R.id.CoffeeAmountText);
+                TextView methodTextWaterAmount = methodView.findViewById(R.id.WaterAmountText);
+                TextView methodTextTimeAmount = methodView.findViewById(R.id.TimeAmountText);
+                TextView methodTextTemperature = methodView.findViewById(R.id.TemperatureText);
+
+                try {
+                    utils.setTransferRecipeListener(background, ListOfMethodsActivity.this, MethodActivity.class, listOfRecipes.get(position));
                 /*DatabaseHelper databaseHelper = new DatabaseHelper(ListOfMethodsActivity.this);
                 if(!databaseHelper.insertData("Logs_table", (listOfRecipes.get(position)).getMethod(), (listOfRecipes.get(position)).getName(), (listOfRecipes.get(position)).getAmountOfWater(),
                         (listOfRecipes.get(position)).getAmountOfTime(), (listOfRecipes.get(position)).getAmountOfCoffee(), (listOfRecipes.get(position)).getTemperature(), (listOfRecipes.get(position)).getGrindSize(),
@@ -88,47 +112,48 @@ public class ListOfMethodsActivity extends AppCompatActivity {
                 {
                     System.out.println("Adding to logs error!");
                 }*/
-            } catch (Exception e1) {
-                System.out.println("Background image loading error!");
+                } catch (Exception e1) {
+                    System.out.println("Background image loading error!");
+                }
+
+                try {
+                    mImageView.setImageResource(methodId);
+                } catch (Exception e2) {
+                    System.out.println("Method's image loading error!");
+                }
+
+                try {
+                    methodTextName.setText((listOfRecipes.get(position)).getName());
+                } catch (NullPointerException e3) {
+                    System.out.println("Method's name loading error!");
+                }
+
+                try {
+                    methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
+                } catch (NullPointerException e4) {
+                    System.out.println("Method's amount of coffee loading error!");
+                }
+
+                try {
+                    methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
+                } catch (NullPointerException e5) {
+                    System.out.println("Method's amount of water loading error!");
+                }
+
+                try {
+                    methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
+                } catch (NullPointerException e6) {
+                    System.out.println("Method's amount of time loading error!");
+                }
+
+                try {
+                    methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
+                } catch (NullPointerException e6) {
+                    System.out.println("Method's temperature loading error!");
+                }
             }
 
-            try {
-                mImageView.setImageResource(methodId);
-            } catch (Exception e2) {
-                System.out.println("Method's image loading error!");
-            }
-
-            try {
-                methodTextName.setText((listOfRecipes.get(position)).getName());
-            } catch (NullPointerException e3) {
-                System.out.println("Method's name loading error!");
-            }
-
-            try {
-                methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
-            } catch (NullPointerException e4) {
-                System.out.println("Method's amount of coffee loading error!");
-            }
-
-            try {
-                methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
-            } catch (NullPointerException e5) {
-                System.out.println("Method's amount of water loading error!");
-            }
-
-            try {
-                methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
-            } catch (NullPointerException e6) {
-                System.out.println("Method's amount of time loading error!");
-            }
-
-            try {
-                methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
-            } catch (NullPointerException e6) {
-                System.out.println("Method's temperature loading error!");
-            }
-
-            return view;
+            return methodView;
         }
     }
 

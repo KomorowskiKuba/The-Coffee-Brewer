@@ -28,6 +28,11 @@ public class Recipe implements Parcelable {
     private String tableOfTime;
     private String isfavourite;
 
+    Recipe(String method, String name) {
+        this.method = method;
+        this.name = name;
+    }
+
     Recipe(String id, String method, String name, String amountOfWater, String amountOfTime, String amountOfCoffee, String temperature, String grindSize, String tableOfGraphics, String tableOfInstructions, String tableOfTime, String isFavourite) {
         this.ID = Integer.parseInt(id);
         this.method = method;
