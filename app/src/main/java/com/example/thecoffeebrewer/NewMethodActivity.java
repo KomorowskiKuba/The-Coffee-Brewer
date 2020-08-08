@@ -1,31 +1,71 @@
 package com.example.thecoffeebrewer;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.NumberPicker;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
+public class NewMethodActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener {
 
-public class NewMethodActivity extends AppCompatActivity {
+    private String methodName;
+    private TextView methodNameTextView;
+    private ImageView methodImageView;
+    private NumberPicker waterNumberPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_method);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Spinner methodNameSpinner = findViewById(R.id.newMethodNameSpinner);
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.methods, android.R.layout.simple_spinner_item);
+        waterNumberPicker = findViewById(R.id.waterNumberPicker);
+        waterNumberPicker.setMinValue(1);
+        waterNumberPicker.setMaxValue(500);
+        waterNumberPicker.setOnValueChangedListener(this);
+
+
+        methodNameTextView = findViewById(R.id.newMethodMethodName);
+        methodImageView = findViewById(R.id.newMethodMethodImage);
+
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        methodNameSpinner.setAdapter(arrayAdapter);
+        methodNameSpinner.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        methodName = parent.getItemAtPosition(position).toString();
+
+        try {
+            methodNameTextView.setText(methodName);
+        } catch (Exception e1) {
+            Log.e("NewMethodActivity", "New method method's setting failure!");
+        }
+
+        try {
+            Global global = new Global();
+            Integer imgID = global.getMethodId(methodName);
+            methodImageView.setImageResource(imgID);
+        } catch (Exception e2) {
+            Log.e("NewMethodActivity", "New method's image setting failure!");
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+
     }
 }

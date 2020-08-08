@@ -2,6 +2,7 @@ package com.example.thecoffeebrewer;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,9 +36,8 @@ public class ListOfMethodsActivity extends AppCompatActivity {
         listOfRecipes.add(topOfList);
 
         if (c.getCount() == 0) {
-            System.out.println("Cursor's error!");
+            Log.e("ListOfMethodsActivity", "Datebase's cursor error!");
         } else {
-
             while (c.moveToNext()) {
                 Recipe r = new Recipe(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6),
                         c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getString(11));
@@ -84,13 +84,13 @@ public class ListOfMethodsActivity extends AppCompatActivity {
                 try {
                     tImageView.setImageResource(methodId);
                 } catch (Exception e1) {
-                    System.out.println("Top card's image view loading error!");
+                    Log.e("ListOfMethodsActivity", "Top card's image view loading error!");
                 }
 
                 try {
                     tTextView.setText(methodName);
                 } catch (Exception e2) {
-                    System.out.println("Top card's text view loading error!");
+                    Log.e("ListOfMethodsActivity", "Top card's text view loading error!");
                 }
             } else {
                 methodView = getLayoutInflater().inflate(R.layout.method_layout, null);
@@ -111,45 +111,45 @@ public class ListOfMethodsActivity extends AppCompatActivity {
                         (listOfRecipes.get(position)).getTableOfGraphics(), (listOfRecipes.get(position)).getTableOfInstructions(), (listOfRecipes.get(position)).getTableOfTime(), (listOfRecipes.get(position)).getIsfavourite()))
                 {
                     System.out.println("Adding to logs error!");
-                }*/
+                }*/ // dodawania do logow
                 } catch (Exception e1) {
-                    System.out.println("Background image loading error!");
+                    Log.e("ListOfMethodsActivity", "Background image loading error!");
                 }
 
                 try {
                     mImageView.setImageResource(methodId);
                 } catch (Exception e2) {
-                    System.out.println("Method's image loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's image loading error!");
                 }
 
                 try {
                     methodTextName.setText((listOfRecipes.get(position)).getName());
                 } catch (NullPointerException e3) {
-                    System.out.println("Method's name loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's name loading error!");
                 }
 
                 try {
                     methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
                 } catch (NullPointerException e4) {
-                    System.out.println("Method's amount of coffee loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's amount of coffee loading error!");
                 }
 
                 try {
                     methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
                 } catch (NullPointerException e5) {
-                    System.out.println("Method's amount of water loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's amount of water loading error!");
                 }
 
                 try {
                     methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
                 } catch (NullPointerException e6) {
-                    System.out.println("Method's amount of time loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's amount of time loading error!");
                 }
 
                 try {
                     methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
                 } catch (NullPointerException e6) {
-                    System.out.println("Method's temperature loading error!");
+                    Log.e("ListOfMethodsActivity", "Method's temperature loading error!");
                 }
             }
 

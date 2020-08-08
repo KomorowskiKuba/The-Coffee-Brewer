@@ -15,10 +15,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         //Test bazy danych
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         //databaseHelper.deleteDataBase("Recipes_table");
-        databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 1", "250g", "2:30", "15g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
-        databaseHelper.insertData("Recipes_table", "Hario V60", "Fav method", "280g", "2:50", "11g", "100C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "true");
-        databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 2", "250g", "2:30", "13g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
-        databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 3", "300g", "2:30", "17g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
+        //databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 1", "250g", "2:30", "15g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
+        //databaseHelper.insertData("Recipes_table", "Hario V60", "Fav method", "280g", "2:50", "11g", "100C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "true");
+        //databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 2", "250g", "2:30", "13g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
+        //databaseHelper.insertData("Recipes_table", "Aeropress", "Przepis 3", "300g", "2:30", "17g", "98C", "medium-fine", "1;2;5", "Do this;Do that", "0:15;0:30", "false");
 
         Utils utils = new Utils();
 

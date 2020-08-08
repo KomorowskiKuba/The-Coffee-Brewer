@@ -123,4 +123,14 @@
     <string name="title_activity_list_of_methods">ScrollingActivity</string>
     <string name="title_activity_welcome_acitivity">WelcomeAcitivity</string>
     <string name="title_activity_method">MethodActivity</string>
+
+    <string-array name="methods">
+        <item>Aeropress</item>
+        <item>Hario V60</item>
+        <item>French Press</item>
+        <item>Chemex</item>
+        <item>Cupping</item>
+        <item>Kalita</item>
+        <item>Moka pot</item>
+    </string-array>
 </resources>
