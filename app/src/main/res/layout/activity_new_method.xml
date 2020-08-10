@@ -80,20 +80,129 @@
         android:textStyle="bold"></EditText>
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="45dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="@+id/newMethodNameEditText"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="190dp"
         android:background="@drawable/wateramountframeyellow"></ImageView>
 
-    <NumberPicker
+    <EditText
         android:id="@+id/waterNumberPicker"
+        android:layout_height="60dp"
         android:layout_width="120dp"
-        android:layout_height="45dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="190dp"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:text="250g"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme.Picker"></EditText>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="@+id/newMethodNameEditText"
+        android:layout_toEndOf="@+id/waterNumberPicker"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="190dp"
-        android:theme="@style/AppTheme.Picker"></NumberPicker>
+        android:background="@drawable/coffeeamountframeyellow"></ImageView>
 
+    <EditText
+        android:id="@+id/coffeeNumberPicker"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="190dp"
+        android:layout_toEndOf="@+id/waterNumberPicker"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:text="15g"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme.Picker"></EditText>
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="@+id/newMethodNameEditText"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/temperatureframeyellow"></ImageView>
+
+    <EditText
+        android:id="@+id/temperatureNumberPicker"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="280dp"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:text="98C"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme.Picker"></EditText>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="@+id/newMethodNameEditText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="280dp"
+        android:layout_toEndOf="@+id/waterNumberPicker"
+        android:background="@drawable/timeframeyellow"></ImageView>
+
+    <EditText
+        android:id="@+id/timeNumberPicker"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="280dp"
+        android:layout_toEndOf="@+id/waterNumberPicker"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:text="2:30"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme.Picker"></EditText>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="@+id/newMethodNameEditText"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/grindsizeframeyellow"></ImageView>
+
+    <TextView
+        android:id="@+id/grindSizePicker"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="@+id/newMethodNameEditText"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="377dp"
+        android:text="Medium-coarse"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <Spinner
+        android:id="@+id/newMethodGrindSizeSpinner"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="380dp"
+        android:layout_toEndOf="@+id/grindSizePicker"
+        android:background="@drawable/dropdownyellow"></Spinner>
+
+    <Button
+        android:id="@+id/addRecipeButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/yellow"
+        android:text="Create"
+        android:textSize="25dp"
+        android:textStyle="bold"></Button>
 
 </RelativeLayout>

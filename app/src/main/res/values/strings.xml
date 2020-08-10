@@ -133,4 +133,14 @@
         <item>Kalita</item>
         <item>Moka pot</item>
     </string-array>
+
+    <string-array name="grindSizes">
+        <item>Extra coarse</item>
+        <item>Coarse</item>
+        <item>Medium-coarse</item>
+        <item>Medium</item>
+        <item>Medium-fine</item>
+        <item>Fine</item>
+        <item>Extra fine</item>
+    </string-array>
 </resources>
