@@ -65,7 +65,6 @@ public class NewMethodActivity extends AppCompatActivity implements AdapterView.
             String grind = grindSizeTextView.getText().toString();
 
             if (name.length() == 0 || water.length() == 0 || coffee.length() == 0 || temperature.length() == 0 || grind.length() == 0) {
-                int toastDurationInMilliSeconds = 2000;
                 Toast mToastToShow = Toast.makeText(this, "Fill all of the informations!", Toast.LENGTH_LONG);
                 mToastToShow.show();
             } else {

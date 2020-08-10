@@ -2,6 +2,7 @@ package com.example.thecoffeebrewer;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -64,59 +65,79 @@ public class FavouritesActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            View view = getLayoutInflater().inflate(R.layout.method_layout, null);
+            View view;
             Utils utils = new Utils();
-            Global global = new Global();
-            Integer imageID = global.getMethodId((listOfRecipes.get(position).getMethod()));
 
-            ImageView background = view.findViewById(R.id.rectanglebackground);
-            ImageView mImageView = view.findViewById(R.id.MethodImageView);
-            TextView methodTextName = view.findViewById(R.id.MethodName);
-            TextView methodTextCoffeeAmount = view.findViewById(R.id.CoffeeAmountText);
-            TextView methodTextWaterAmount = view.findViewById(R.id.WaterAmountText);
-            TextView methodTextTimeAmount = view.findViewById(R.id.TimeAmountText);
-            TextView methodTextTemperature = view.findViewById(R.id.TemperatureText);
+            if (position == 0) {
+                view = getLayoutInflater().inflate(R.layout.top_list_layout, null);
+                ImageView tImageView = view.findViewById(R.id.toplistImageView);
+                TextView tTextView = view.findViewById(R.id.toplistTextView);
 
-            try {
-                utils.setTransferRecipeListener(background, FavouritesActivity.this, MethodActivity.class, listOfRecipes.get(position));
-            } catch (Exception e1) {
-                System.out.println("Background image loading error!");
-            }
+                try {
+                    tImageView.setImageResource(R.drawable.heart);
+                } catch (Exception e1) {
+                    Log.e("ListOfMethodsActivity", "Top card's image view loading error!");
+                }
 
-            try {
-                mImageView.setImageResource(imageID);
-            } catch (Exception e2) {
-                System.out.println("Method's image loading error!");
-            }
+                try {
+                    tTextView.setText("Favourites");
+                } catch (Exception e2) {
+                    Log.e("ListOfMethodsActivity", "Top card's text view loading error!");
+                }
+            } else {
+                view = getLayoutInflater().inflate(R.layout.method_layout, null);
+                Global global = new Global();
+                Integer imageID = global.getMethodId((listOfRecipes.get(position).getMethod()));
 
-            try {
-                methodTextName.setText((listOfRecipes.get(position)).getName());
-            } catch (NullPointerException e3) {
-                System.out.println("Method's name loading error!");
-            }
+                ImageView background = view.findViewById(R.id.rectanglebackground);
+                ImageView mImageView = view.findViewById(R.id.MethodImageView);
+                TextView methodTextName = view.findViewById(R.id.MethodName);
+                TextView methodTextCoffeeAmount = view.findViewById(R.id.CoffeeAmountText);
+                TextView methodTextWaterAmount = view.findViewById(R.id.WaterAmountText);
+                TextView methodTextTimeAmount = view.findViewById(R.id.TimeAmountText);
+                TextView methodTextTemperature = view.findViewById(R.id.TemperatureText);
 
-            try {
-                methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
-            } catch (NullPointerException e4) {
-                System.out.println("Method's amount of coffee loading error!");
-            }
+                try {
+                    utils.setTransferRecipeListener(background, FavouritesActivity.this, MethodActivity.class, listOfRecipes.get(position));
+                } catch (Exception e1) {
+                    System.out.println("Background image loading error!");
+                }
 
-            try {
-                methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
-            } catch (NullPointerException e5) {
-                System.out.println("Method's amount of water loading error!");
-            }
+                try {
+                    mImageView.setImageResource(imageID);
+                } catch (Exception e2) {
+                    System.out.println("Method's image loading error!");
+                }
 
-            try {
-                methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
-            } catch (NullPointerException e6) {
-                System.out.println("Method's amount of time loading error!");
-            }
+                try {
+                    methodTextName.setText((listOfRecipes.get(position)).getName());
+                } catch (NullPointerException e3) {
+                    System.out.println("Method's name loading error!");
+                }
 
-            try {
-                methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
-            } catch (NullPointerException e6) {
-                System.out.println("Method's temperature loading error!");
+                try {
+                    methodTextCoffeeAmount.setText((listOfRecipes.get(position)).getAmountOfCoffee());
+                } catch (NullPointerException e4) {
+                    System.out.println("Method's amount of coffee loading error!");
+                }
+
+                try {
+                    methodTextWaterAmount.setText((listOfRecipes.get(position)).getAmountOfWater());
+                } catch (NullPointerException e5) {
+                    System.out.println("Method's amount of water loading error!");
+                }
+
+                try {
+                    methodTextTimeAmount.setText((listOfRecipes.get(position)).getAmountOfTime());
+                } catch (NullPointerException e6) {
+                    System.out.println("Method's amount of time loading error!");
+                }
+
+                try {
+                    methodTextTemperature.setText((listOfRecipes.get(position)).getTemperature());
+                } catch (NullPointerException e6) {
+                    System.out.println("Method's temperature loading error!");
+                }
             }
 
             return view;
