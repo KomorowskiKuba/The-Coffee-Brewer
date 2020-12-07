@@ -13,7 +13,7 @@ Project is created with:
 * SQLite
 
 ## Screenshots
-![Homescreen](./screens/MainScreens.jpg){:class="img-responsive"}
+<img src="./screens/MainScreen.jpg" width="100" height="100">
 * App's homescreen
 
 ![ALternatives](./screens/AlternativeMethods.jpg)
