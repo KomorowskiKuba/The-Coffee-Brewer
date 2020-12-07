@@ -13,14 +13,14 @@ Project is created with:
 * SQLite
 
 ## Screenshots
-<img src="./screens/MainScreen.jpg" width="100" height="100">
+<img src="./screens/MainScreen.jpg" width="472" height="997">
 * App's homescreen
 
-![ALternatives](./screens/AlternativeMethods.jpg)
+<img src="./screens/AlternativeMethods.jpg" width="472" height="997">
 * Alternative coffee brewing method's select screen
 
-![Recipes](./screens/Recipes.jpg)
+<img src="./screens/Recipes.jpg" width="472" height="997">
 * Method's recipes select screen
 
-![Recipe](./screens/Recipe.jpg)
+<img src="./screens/Recipe.jpg" width="472" height="997">
 * Current method screen
