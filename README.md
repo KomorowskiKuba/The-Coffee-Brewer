@@ -2,7 +2,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Screenshots](#screenshots)
 
 ## General info
 Android app which will help you in complex process of preparing speciality coffee.
@@ -11,3 +11,6 @@ Android app which will help you in complex process of preparing speciality coffe
 Project is created with:
 * Android Java
 * SQLite
+
+## Screenshots
+![Algorithm schema](./images/schema.jpg)
