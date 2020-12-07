@@ -13,4 +13,14 @@ Project is created with:
 * SQLite
 
 ## Screenshots
-![Algorithm schema](./images/schema.jpg)
+![Homescreen](./screens/MainScreens.jpg)
+* App's homescreen
+
+![ALternatives](./screens/AlternativeMethods.jpg)
+* Alternative coffee brewing method's select screen
+
+![Recipes](./screens/Recipes.jpg)
+* Method's recipes select screen
+
+![Recipe](./screens/Recipe.jpg)
+* Current method screen
